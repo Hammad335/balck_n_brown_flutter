@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "316415121484",
+    "project_id": "black-n-brown",
+    "storage_bucket": "black-n-brown.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316415121484:android:cec905c116d08936b1fce9",
+        "android_client_info": {
+          "package_name": "com.hamad.black_n_brown"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316415121484-po83vdj54mssbg0sbm5sj5vp8qmaguti.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4yk0TWE3PkJto3fDjQcjeePd0XpF87uI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316415121484-po83vdj54mssbg0sbm5sj5vp8qmaguti.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
