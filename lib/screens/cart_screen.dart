@@ -10,7 +10,7 @@ import 'package:provider/provider.dart';
 import '../models/cartItem.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/screen_header.dart';
-import '../widgets/show_custom_success_dialog.dart';
+import '../widgets/custom_success_dialog.dart';
 
 class CartScreen extends StatefulWidget {
   CartScreen({Key? key}) : super(key: key);
@@ -143,7 +143,7 @@ class _CartScreenState extends State<CartScreen> {
                         cart.totalAmount,
                       );
                       await cart.clearCart();
-                      ShowCustomSuccessDialog().show(context);
+                      CustomSuccessDialog().show(context);
                     } on FirebaseException catch (exception) {
                       print(exception.message.toString());
                       // _showSnackBar(exception.message.toString());

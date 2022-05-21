@@ -58,6 +58,11 @@ class MyApp extends StatelessWidget {
           canvasColor: Colors.white,
           fontFamily: 'Poppins-Medium',
         ),
+        // home: AnimatedSplashScreen(
+        //   splash: Image.asset('assets/images/black_n_brown_logo.png'),
+        //   nextScreen: CredentialsScreen(),
+        //   duration: 2000,
+        // ),
         routes: {
           '/': (context) => CredentialsScreen(),
           TabsScreen.routeName: (context) => TabsScreen(),

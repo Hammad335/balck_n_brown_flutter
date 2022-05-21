@@ -79,6 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           hintText: 'search for items here...',
                           hintStyle: kTitleSmall.copyWith(
                             fontWeight: FontWeight.w100,
+                            color: kContainerBorderColor,
                           ),
                           fillColor: kSecondaryColor,
                           filled: true,

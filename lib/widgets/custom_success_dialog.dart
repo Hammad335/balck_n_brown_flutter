@@ -4,7 +4,7 @@ import 'package:lottie/lottie.dart';
 
 import 'custom_button.dart';
 
-class ShowCustomSuccessDialog {
+class CustomSuccessDialog {
   void show(BuildContext context) {
     final size = MediaQuery.of(context).size;
     showDialog(

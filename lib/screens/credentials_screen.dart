@@ -55,6 +55,7 @@ class _CredentialsScreenState extends State<CredentialsScreen> {
     _contactNoFocusNode.dispose();
     _passwordFocusNode.dispose();
     _forgotPasswordEmailController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -123,7 +124,6 @@ class _CredentialsScreenState extends State<CredentialsScreen> {
                               },
                               validator: (userName) {
                                 if (userName == null || userName.isEmpty) {
-                                  _userNameFocusNode.requestFocus();
                                   return 'Please provide username';
                                 } else if (userName.length <= 2) {
                                   return 'Too short, can be b/w 2 to 7 characters';
@@ -198,7 +198,7 @@ class _CredentialsScreenState extends State<CredentialsScreen> {
                                   textInputAction: TextInputAction.next,
                                   focusNode: _contactNoFocusNode,
                                   onFieldSubmitted: (_) {
-                                    _scrollController.animateTo(50,
+                                    _scrollController.animateTo(40,
                                         duration:
                                             const Duration(milliseconds: 500),
                                         curve: Curves.easeIn);
@@ -212,11 +212,11 @@ class _CredentialsScreenState extends State<CredentialsScreen> {
                                   validator: (number) {
                                     if (number == null || number.isEmpty) {
                                       return 'Please provide contact no';
+                                    } else if (!number.startsWith('+92')) {
+                                      return 'Number format should be +92...';
                                     } else if (number.length < 13 ||
                                         number.length > 13) {
                                       return 'Invalid Number';
-                                    } else if (!number.startsWith('+92')) {
-                                      return 'Number format should be +92...';
                                     }
                                     return null;
                                   },
@@ -255,7 +255,7 @@ class _CredentialsScreenState extends State<CredentialsScreen> {
                             keyboardType: TextInputType.visiblePassword,
                             focusNode: _passwordFocusNode,
                             onTap: () {
-                              _scrollController.animateTo(50,
+                              _scrollController.animateTo(120,
                                   duration: const Duration(milliseconds: 500),
                                   curve: Curves.easeIn);
                             },
@@ -361,6 +361,9 @@ class _CredentialsScreenState extends State<CredentialsScreen> {
                   ),
                   onTap: () {
                     setState(() {
+                      _submitted = false;
+                      _emailFocusNode.unfocus();
+                      _passwordFocusNode.unfocus();
                       if (!_createAccount) {
                         _createAccount = true;
                       } else {
